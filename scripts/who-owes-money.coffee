@@ -1,6 +1,7 @@
 Promise = require("bluebird");
 XeroConnection = require('./xero-connection');
 _ = require('lodash');
+numeral = require('numeral');
 
 GetContactsOwingMoney = '/contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1'
 
@@ -14,7 +15,7 @@ module.exports = {
 				if(err)
 					reject()
 				else
-          			resolve(json.Response)
+          resolve(json.Response)
 			)
 		)
 		return promise;
@@ -40,9 +41,9 @@ module.exports = {
      	results.push("Nobody does");
     else
      	_.forEach(answer, (contact) ->
-     		line = '' + contact.name + ': ' + Number(contact.outstanding).toFixed(2)
+     		line = '' + contact.name + ': ' + numeral(Number(contact.outstanding)).format('$0,0.00')
      		if(contact.overdue > 0)
-     			line += ' (' + Number(contact.overdue).toFixed(2) + ' overdue)'
+     			line += ' (' + numeral(Number(contact.overdue)).format('$0,0.00') + ' overdue)'
      		results.push(line)
       	)
   		return results;

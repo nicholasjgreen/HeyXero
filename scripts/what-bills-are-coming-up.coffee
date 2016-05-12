@@ -1,16 +1,19 @@
 Promise = require("bluebird");
 XeroConnection = require('./xero-connection');
 _ = require('lodash');
+moment = require('moment');
+numeral = require('numeral');
 
-GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22+%26%26+Status%3d%3d%22AUTHORISED+%22&order=DueDate+DESC&page=1'
+#GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22+%26%26+Status%3d%3d%22AUTHORISED+%22&order=DueDate+DESC&page=1'
+GetBillsComingUp = '/invoices?where=Type%3d%22ACCPAY%22+%26%26+Status%3d%3d%22AUTHORISED+%22+%26%26+DueDate+%3e%3d+DateTime.Today+AND+DueDate+%3c%3d+DateTime.Today.AddDays(1)&order=DueDate&page=1'
 
 module.exports = {
 	doRequest: () ->
 		console.log('WhatBillsAreComingUp.doRequest()')
 		promise = new Promise((resolve, reject) ->
-			console.log("GET: #{GetBillsComingUp}")
+			#console.log("GET: #{GetBillsComingUp}")
 			XeroConnection().call('GET', GetBillsComingUp, null, (err, json) ->
-				console.log("Received: #{JSON.stringify(json)}")
+				#console.log("Received: #{JSON.stringify(json)}")
 				if(err)
 					reject()
 				else
@@ -29,8 +32,8 @@ module.exports = {
 			results.push({
 				invoiceNumber: invoice.InvoiceNumber
 				name: invoice.Contact.Name
-				dueDate: invoice.DueDate
-				amountDue: invoice.AmountDue
+				dueDate: moment(invoice.DueDate)
+				amountDue: Number(invoice.AmountDue)
 			})
 		)
 		return results;
@@ -39,12 +42,14 @@ module.exports = {
 		results = []
 		if(!answer.length)
 			results.push("No bills due soon");
+			return results;
 		else
 			_.forEach(answer, (invoice) ->
-				line = invoice.dueDate;
+				line = moment(invoice.dueDate).format('DD/MM/YYYY');
 				if(invoice.invoiceNumber)
 					line += (' ' + invoice.invoiceNumber)
-				line += ' ' + invoice.name + ': ' + Number(invoice.amountDue).toFixed(2)
-			)
+				line += ' ' + invoice.name + ': ' + numeral(invoice.amountDue).format('$0,0.00');
+				results.push(line);
+			)			
 		return results;
   }

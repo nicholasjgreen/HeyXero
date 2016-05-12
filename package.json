@@ -21,6 +21,8 @@
     "hubot-slack": "^3.1.0",
     "hubot-youtube": "^0.1.2",
     "lodash": "^4.12.0",
+    "moment": "^2.13.0",
+    "numeral": "^1.5.3",
     "xero": "0.0.8"
   },
   "engines": {
