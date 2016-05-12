@@ -1,9 +1,9 @@
 {
-  "name": "hubot-tutorial",
+  "name": "heyxero",
   "version": "0.0.0",
   "private": true,
-  "author": "Michi Kono <michi@monsoonco.com>",
-  "description": "A simple helpful robot for your Company",
+  "author": "Scott Potter <scott.potter@xero.com>",
+  "description": "A personal assitant for your small business, by Xero.",
   "dependencies": {
     "hubot": "^2.10.0",
     "hubot-diagnostics": "0.0.1",
@@ -18,7 +18,8 @@
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.1.1",
     "hubot-slack": "^3.1.0",
-    "hubot-youtube": "^0.1.2"
+    "hubot-youtube": "^0.1.2",
+    "xero": "0.0.8"
   },
   "engines": {
     "node": "0.10.x"
