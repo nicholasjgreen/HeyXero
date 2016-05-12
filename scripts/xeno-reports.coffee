@@ -10,6 +10,7 @@
 Xero = require('xero');
 Operator = require('./operator');
 Promise = require("bluebird");
+_ = require('lodash');
 
 module.exports = (robot) ->
 
@@ -17,8 +18,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
-        console.log('Answering!')
-        res.reply(result)
+        res.reply(_.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask again later?")
