@@ -1,0 +1,109 @@
+{
+  "Id": "b558707e-6cff-48bc-a433-4c720ef0d6f6",
+  "Status": "OK",
+  "ProviderName": "Xero API Previewer",
+  "DateTimeUTC": "\/Date(1463012588489)\/",
+  "Reports": [
+    {
+      "ReportID": "BankSummary",
+      "ReportName": "Bank Summary",
+      "ReportType": "BankSummary",
+      "ReportTitles": [
+        "Bank Summary",
+        "Demo Company (US)",
+        "From 1 May 2016 to 31 May 2016"
+      ],
+      "ReportDate": "12 May 2016",
+      "UpdatedDateUTC": "\/Date(1463012588489)\/",
+      "Fields": [
+
+      ],
+      "Rows": [
+        {
+          "RowType": "Header",
+          "Cells": [
+            {
+              "Value": "Bank Accounts"
+            },
+            {
+              "Value": "Opening Balance"
+            },
+            {
+              "Value": "Cash Received"
+            },
+            {
+              "Value": "Cash Spent"
+            },
+            {
+              "Value": "Closing Balance"
+            }
+          ]
+        },
+        {
+          "RowType": "Section",
+          "Title": "",
+          "Rows": [
+            {
+              "RowType": "Row",
+              "Cells": [
+                {
+                  "Value": "Checking Account",
+                  "Attributes": [
+                    {
+                      "Value": "ceef66a5-a545-413b-9312-78a53caadbc4",
+                      "Id": "accountID"
+                    }
+                  ]
+                },
+                {
+                  "Value": "3544.13"
+                },
+                {
+                  "Value": "35.00",
+                  "Attributes": [
+                    {
+                      "Value": "ceef66a5-a545-413b-9312-78a53caadbc4",
+                      "Id": "account"
+                    }
+                  ]
+                },
+                {
+                  "Value": "8525.46",
+                  "Attributes": [
+                    {
+                      "Value": "ceef66a5-a545-413b-9312-78a53caadbc4",
+                      "Id": "account"
+                    }
+                  ]
+                },
+                {
+                  "Value": "-4946.33"
+                }
+              ]
+            },
+            {
+              "RowType": "SummaryRow",
+              "Cells": [
+                {
+                  "Value": "Total"
+                },
+                {
+                  "Value": "3544.13"
+                },
+                {
+                  "Value": "35.00"
+                },
+                {
+                  "Value": "8525.46"
+                },
+                {
+                  "Value": "-4946.33"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
