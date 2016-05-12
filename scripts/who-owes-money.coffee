@@ -4,7 +4,8 @@ XeroConnection = require('./xero-connection');
 module.exports = {
 	doRequest: () ->
 		promise = new Promise (resolve, reject) ->
-    		XeroConnection().call 'GET', '/Reports/BalanceSheet', null, (err, json) ->
+			# https://api.xero.com/api.xro/2.0/contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1
+    		XeroConnection().call 'GET', 'contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1', null, (err, json) ->
       			if(err)
       				reject
       			else

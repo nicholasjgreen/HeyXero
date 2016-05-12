@@ -12,7 +12,7 @@ Operator = require('./operator');
 Promise = require("bluebird");
 
 module.exports = (robot) ->
-
+ 
   robot.respond /money/i, (res) ->
   	promise = Operator.whoOwesMoney()
   	promise.then (result) ->
