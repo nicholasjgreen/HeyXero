@@ -23,7 +23,7 @@ grunt.initConfig({
 				spawn: false,
 			},
 			files: ['tests/*.js', 'scripts/*.coffee', '**/*.json'],
-			tasks: ['test']
+			tasks: ['coffee', 'test']
 		}
 	},
 

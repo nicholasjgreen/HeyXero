@@ -18,7 +18,7 @@ module.exports = {
 
 	createAnswer:  (parsedResponse) ->
 		return {
-			name: 'bob'
+			name: 'bob' 
 			} 
 
 	formatAnswer: (answer) ->
