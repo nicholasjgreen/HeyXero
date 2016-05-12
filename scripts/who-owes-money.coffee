@@ -40,10 +40,10 @@ module.exports = {
      	results.push("Nobody does");
     else
      	_.forEach(answer, (contact) ->
-      	line = '' + contact.name + ': ' + Number(contact.outstanding).toFixed(2)
-      	if(contact.overdue > 0)
-      		line += ' (' + Number(contact.overdue).toFixed(2) + ' overdue)'
-      	results.push(line)
+     		line = '' + contact.name + ': ' + Number(contact.outstanding).toFixed(2)
+     		if(contact.overdue > 0)
+     			line += ' (' + Number(contact.overdue).toFixed(2) + ' overdue)'
+     			results.push(line)
       	)
   		return results;
   }

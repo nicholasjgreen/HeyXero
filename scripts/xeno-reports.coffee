@@ -14,7 +14,7 @@ _ = require('lodash');
 
 module.exports = (robot) ->
 
-  robot.respond(/money/i, (res) ->
+  robot.respond(/who owes( me)?( the most)?( money)?\??/i, (res) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
