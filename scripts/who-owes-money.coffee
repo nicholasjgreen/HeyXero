@@ -1,26 +1,44 @@
 Promise = require("bluebird");
 XeroConnection = require('./xero-connection');
+_ = require('lodash');
+
+GetContactsOwingMoney = '/contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1'
 
 module.exports = {
 	doRequest: () ->
-		promise = new Promise (resolve, reject) ->
-			# https://api.xero.com/api.xro/2.0/contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1
-    		XeroConnection().call 'GET', 'contacts?where=(Balances+!%3d+null+%26%26+Balances.AccountsReceivable+!%3d+null+%26%26+Balances.AccountsReceivable.Outstanding+%3e+0)&order=(Balances.AccountsReceivable.Outstanding)+DESC&page=1', null, (err, json) ->
-      			if(err)
-      				reject
-      			else
-        			resolve(json)
-
+		console.log('doRequest()')
+		promise = new Promise((resolve, reject) ->
+			console.log('sending...')
+			XeroConnection().call( 'GET', GetContactsOwingMoney, null, (err, json) ->
+				if(err)
+					console.log('Rejecting -- the query to xero failed')
+					reject()
+				else
+					console.log('Got our data...')
+					resolve(json.Response)
+			)
+		)
 		return promise;
 
-	parseXeroRespone: (xeroResponse) ->
-		return xeroResponse
+	createAnswer:  (response) ->
+		if(!response || !response.Contacts || !response.Contacts.Contact.length)
+			console.log(response)
+			console.log(response.Contacts.Contact)
+			console.log('No contacts in response')
+			return [];
 
-	createAnswer:  (parsedResponse) ->
-		return {
-			name: 'bob' 
-			} 
+		results = [];
+		_.forEach(_.take(response.Contacts.Contact, 5), (contact) ->
+				results.push({
+					name: contact.Name
+					outstanding: contact.Balances.AccountsReceivable.Outstanding
+					overdue: contact.Balances.AccountsReceivable.Overdue
+				})
+			)	
+		return results;
 
 	formatAnswer: (answer) ->
-		return 'you do, ' + answer.name;
+		if(!answer.length)
+			return "Nobody does";
+		return 'you do, ' + answer[0].name;
 }		

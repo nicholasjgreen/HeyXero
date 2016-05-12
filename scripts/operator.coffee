@@ -4,19 +4,21 @@ Promise = require("bluebird");
 WhoOwesMoney = require('./who-owes-money');
 
 module.exports = {
-	hello: "yo"
 	whoOwesMoney: () ->
-		outerPromise = new Promise (resolve, reject) -> 
-
+		console.log('yo')
+		outerPromise = new Promise((outerResolve, outerReject) -> 
 			# Start the request and get its promise
 			promise = WhoOwesMoney.doRequest();
-			promise.then (xeroResponse) ->
-				parsedXeroResponse = WhoOwesMoney.parseXeroRespone(xeroResponse);
-				answer = WhoOwesMoney.createAnswer(parsedXeroResponse);
-				formattedAnswer = WhoOwesMoney.formatAnswer(answer);
-
-				# Resolve with the formatted answer
-				resolve(formattedAnswer);
-
+			promise.then(
+				(xeroResponse) ->
+					answer = WhoOwesMoney.createAnswer(xeroResponse);
+					formattedAnswer = WhoOwesMoney.formatAnswer(answer);
+					console.log('Got a formatted answer, resolving!  ' + formattedAnswer)
+					outerResolve(formattedAnswer);
+				() ->
+					console.log('Rejecting')
+					outerReject();
+			)
+		)
 		return outerPromise;
 }

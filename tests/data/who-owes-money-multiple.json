@@ -1,0 +1,527 @@
+{
+  "Id": "fdcca0df-a457-4821-a33f-22d664a09193",
+  "Status": "OK",
+  "ProviderName": "Xero API Previewer",
+  "DateTimeUTC": "\/Date(1463025452849)\/",
+  "Contacts": [
+    {
+      "ContactID": "ce8f68ae-f0b1-4afb-b101-b649d63c916b",
+      "ContactStatus": "ACTIVE",
+      "Name": "ABC Limited",
+      "EmailAddress": "",
+      "BankAccountDetails": "",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": ""
+        },
+        {
+          "AddressType": "STREET",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": ""
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1450165638447+1300)\/",
+      "ContactGroups": [],
+      "IsSupplier": false,
+      "IsCustomer": true,
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 1397758.05,
+          "Overdue": 1397758.05
+        },
+        "AccountsPayable": {
+          "Outstanding": 0.00,
+          "Overdue": 0.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    },
+    {
+      "ContactID": "46aa21e5-da3d-4e09-a5c5-9e5f3c996ad7",
+      "ContactStatus": "ACTIVE",
+      "Name": "City Limousines",
+      "FirstName": "Martin",
+      "LastName": "Dale",
+      "EmailAddress": "",
+      "SkypeUserName": "",
+      "BankAccountDetails": "",
+      "TaxNumber": "",
+      "AccountsReceivableTaxType": "",
+      "AccountsPayableTaxType": "",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "AddressLine1": "",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": "",
+          "AttentionTo": "Accounts Dept"
+        },
+        {
+          "AddressType": "STREET",
+          "AddressLine1": "",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": "",
+          "AttentionTo": ""
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "8004001",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "7774001",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1436966302543+1200)\/",
+      "ContactGroups": [
+        {
+          "ContactGroupID": "bb971dc2-c8d3-4234-9c8e-d52fa13c7c6b",
+          "Name": "Training Customers",
+          "Status": "ACTIVE",
+          "Contacts": [],
+          "HasValidationErrors": false
+        }
+      ],
+      "IsSupplier": false,
+      "IsCustomer": true,
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 1169.95,
+          "Overdue": 1169.95
+        },
+        "AccountsPayable": {
+          "Outstanding": 0.00,
+          "Overdue": 0.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    },
+    {
+      "ContactID": "e1120641-c8d5-4e51-962c-52d1d1086a92",
+      "ContactStatus": "ACTIVE",
+      "Name": "Basket Case",
+      "FirstName": "Mary",
+      "LastName": "Munn",
+      "EmailAddress": "shop@basketcase.co",
+      "BankAccountDetails": "",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "AddressLine1": "Shop 14 Ridgeway Mall",
+          "AddressLine2": "500 River Road",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "Pinehaven",
+          "Region": "",
+          "PostalCode": "9877",
+          "Country": "",
+          "AttentionTo": ""
+        },
+        {
+          "AddressType": "STREET",
+          "AddressLine1": "10 Holland Street",
+          "AddressLine2": "Te Aro",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "Wellington",
+          "Region": "",
+          "PostalCode": "6011",
+          "Country": "New Zealand",
+          "AttentionTo": ""
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "9176665",
+          "PhoneAreaCode": "02",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "7773001",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1436775827210+1200)\/",
+      "ContactGroups": [
+        {
+          "ContactGroupID": "bb971dc2-c8d3-4234-9c8e-d52fa13c7c6b",
+          "Name": "Training Customers",
+          "Status": "ACTIVE",
+          "Contacts": [],
+          "HasValidationErrors": false
+        }
+      ],
+      "IsSupplier": false,
+      "IsCustomer": true,
+      "BrandingTheme": {
+        "BrandingThemeID": "4c82c365-35cb-467f-bb11-dce1f2f2f67c",
+        "Name": "Very orange invoice!"
+      },
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 914.55,
+          "Overdue": 914.55
+        },
+        "AccountsPayable": {
+          "Outstanding": 0.00,
+          "Overdue": 0.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    },
+    {
+      "ContactID": "8a8fb8ad-e6ff-4c3e-b871-515124e40840",
+      "ContactStatus": "ACTIVE",
+      "Name": "Marine Systems",
+      "FirstName": "",
+      "LastName": "",
+      "EmailAddress": "",
+      "SkypeUserName": "",
+      "BankAccountDetails": "",
+      "TaxNumber": "",
+      "AccountsReceivableTaxType": "",
+      "AccountsPayableTaxType": "",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "AddressLine1": "",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": "",
+          "AttentionTo": "Accounts Dept"
+        },
+        {
+          "AddressType": "STREET",
+          "AddressLine1": "",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": "",
+          "AttentionTo": ""
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "9786456",
+          "PhoneAreaCode": "02",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1436966303493+1200)\/",
+      "ContactGroups": [
+        {
+          "ContactGroupID": "bb971dc2-c8d3-4234-9c8e-d52fa13c7c6b",
+          "Name": "Training Customers",
+          "Status": "ACTIVE",
+          "Contacts": [],
+          "HasValidationErrors": false
+        }
+      ],
+      "IsSupplier": false,
+      "IsCustomer": true,
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 396.00,
+          "Overdue": 396.00
+        },
+        "AccountsPayable": {
+          "Outstanding": 0.00,
+          "Overdue": 0.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    },
+    {
+      "ContactID": "342a5560-dbb7-408f-835b-d93d49511d6d",
+      "ContactStatus": "ACTIVE",
+      "Name": "DIISR - Small Business Services",
+      "FirstName": "",
+      "LastName": "",
+      "EmailAddress": "cad@diisr.govt",
+      "SkypeUserName": "maggie-diisr",
+      "BankAccountDetails": "",
+      "TaxNumber": "",
+      "AccountsReceivableTaxType": "",
+      "AccountsPayableTaxType": "",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "AddressLine1": "GPO 9566",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "Pinehaven",
+          "Region": "",
+          "PostalCode": "9862",
+          "Country": "",
+          "AttentionTo": "Corporate Accounting"
+        },
+        {
+          "AddressType": "STREET",
+          "AddressLine1": "",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "",
+          "Region": "",
+          "PostalCode": "",
+          "Country": "",
+          "AttentionTo": ""
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "8009001",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "8009002",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "",
+          "PhoneAreaCode": "",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1436701954813+1200)\/",
+      "ContactGroups": [],
+      "IsSupplier": false,
+      "IsCustomer": true,
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 270.63,
+          "Overdue": 270.63
+        },
+        "AccountsPayable": {
+          "Outstanding": 0.00,
+          "Overdue": 0.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    },
+    {
+      "ContactID": "16c56769-c3c8-4dad-bd40-523f83bfe017",
+      "ContactStatus": "ACTIVE",
+      "Name": "Bayside Club",
+      "FirstName": "Bob",
+      "LastName": "Partridge",
+      "EmailAddress": "secretarybob@bsclub.co",
+      "SkypeUserName": "bayside577",
+      "BankAccountDetails": "98-0918-03451237-00",
+      "TaxNumber": "90-987-789",
+      "AccountsReceivableTaxType": "OUTPUT2",
+      "Addresses": [
+        {
+          "AddressType": "POBOX",
+          "AddressLine1": "P O Box 3354",
+          "AddressLine2": "South Mailing Centre",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "Ridge Heights",
+          "Region": "Madeupville",
+          "PostalCode": "6001",
+          "Country": "New Zealand",
+          "AttentionTo": "Club Secretary"
+        },
+        {
+          "AddressType": "STREET",
+          "AddressLine1": "148 Bay Harbour Road",
+          "AddressLine2": "",
+          "AddressLine3": "",
+          "AddressLine4": "",
+          "City": "Ridge Heights",
+          "Region": "Madeupville",
+          "PostalCode": "6001",
+          "Country": "New Zealand",
+          "AttentionTo": "Club Secretary"
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "DDI",
+          "PhoneNumber": "2024418",
+          "PhoneAreaCode": "02",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "DEFAULT",
+          "PhoneNumber": "2024455",
+          "PhoneAreaCode": "02",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "FAX",
+          "PhoneNumber": "2025566",
+          "PhoneAreaCode": "02",
+          "PhoneCountryCode": ""
+        },
+        {
+          "PhoneType": "MOBILE",
+          "PhoneNumber": "7774455",
+          "PhoneAreaCode": "01",
+          "PhoneCountryCode": ""
+        }
+      ],
+      "UpdatedDateUTC": "\/Date(1436786814227+1200)\/",
+      "ContactGroups": [
+        {
+          "ContactGroupID": "bb971dc2-c8d3-4234-9c8e-d52fa13c7c6b",
+          "Name": "Training Customers",
+          "Status": "ACTIVE",
+          "Contacts": [],
+          "HasValidationErrors": false
+        }
+      ],
+      "IsSupplier": true,
+      "IsCustomer": true,
+      "DefaultCurrency": "NZD",
+      "BrandingTheme": {
+        "BrandingThemeID": "7889a0ac-262a-40e3-8a63-9a769b1a18af",
+        "Name": "Standard"
+      },
+      "BatchPayments": {
+        "BankAccountNumber": "98-0918-03451237-00",
+        "BankAccountName": "BSA",
+        "Details": "Bayside Hold",
+        "Code": "",
+        "Reference": ""
+      },
+      "Balances": {
+        "AccountsReceivable": {
+          "Outstanding": 234.00,
+          "Overdue": 234.00
+        },
+        "AccountsPayable": {
+          "Outstanding": 130.00,
+          "Overdue": 130.00
+        }
+      },
+      "ContactPersons": [],
+      "HasAttachments": false,
+      "HasValidationErrors": false
+    }
+  ]
+}
