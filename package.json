@@ -19,7 +19,8 @@
     "hubot-shipit": "^0.1.1",
     "hubot-slack": "^3.1.0",
     "hubot-youtube": "^0.1.2",
-    "xero": "0.0.8"
+    "xero": "0.0.8",
+    "bluebird": "^3.3.5"
   },
   "engines": {
     "node": "0.10.x"
