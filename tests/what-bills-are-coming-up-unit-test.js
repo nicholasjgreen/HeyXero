@@ -52,9 +52,9 @@ describe('WhatBillsAreComingUp', function () {
 			]);
 
 			assert.equal(result.length, 3);
-			assert.equal(result[0], '01/09/2016 1 Bob: $1,000.00');
-			assert.equal(result[1], '02/09/2016 2 Fred: $50.00');
-			assert.equal(result[2], '03/09/2016 Malthilde: $12.12');
+			assert.equal(result[0], '01/09/2016 *1* Bob: *$1,000.00*');
+			assert.equal(result[1], '02/09/2016 *2* Fred: *$50.00*');
+			assert.equal(result[2], '03/09/2016 Malthilde: *$12.12*');
     });
 
 		it('should handle one invoices', function () {
@@ -63,7 +63,7 @@ describe('WhatBillsAreComingUp', function () {
       ]);
 
       assert.equal(result.length, 1);
-      assert.equal(result[0], '03/09/2016 3 Malthilde: $12.12');
+      assert.equal(result[0], '03/09/2016 *3* Malthilde: *$12.12*');
     });
 
 		it('should handle no invoices', function () {
