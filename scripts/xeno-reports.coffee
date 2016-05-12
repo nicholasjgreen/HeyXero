@@ -8,16 +8,12 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 Xero = require('xero');
-FS = require('fs');
+Operator = require('./operator');
+Promise = require("bluebird");
 
 module.exports = (robot) ->
 
-  robot.respond /show me my balance sheets/i, (res) ->
-    xero = new Xero("MX3ALNIJI27NOYWIG0SKDZU3U7NI2U", "EQ4C2UHFTQK16GTSRXLGVTNBYRACSH",
-      FS.readFileSync('./privatekey.pem'))
-
-    xero.call 'GET', '/Reports/BalanceSheet', null, (err, json) ->
-      if(err)
-        res.send 'Sorry, there was an error in fetching the balance sheets...'
-      else
-        res.send JSON.stringify(json)
+  robot.respond /money/i, (res) ->
+  	promise = Operator.whoOwesMoney()
+  	promise.then (result) ->
+  		res.reply(result) 
