@@ -37,8 +37,8 @@ module.exports = (robot) ->
     )
   )
 
-#  robot.respond(/what bills( are)?( coming up)?\??/i, (res) ->
-  robot.respond(/bills/i, (res) ->
+  robot.respond(/what bills( are)?( coming up)?\??/i, (res) ->
+#  robot.respond(/bills/i, (res) ->
     console.log('about to ask operator, what bills are coming up?')
     Operator.whatBillsAreComingUp().then(
       (result) ->
@@ -49,12 +49,14 @@ module.exports = (robot) ->
     )
   )
 
+  robot.respond(/i need money/i, (res) ->
+  	console.log('they want help')
+  	res.reply('It looks like you need some more capital... finweb coming soon!')
+  )
+
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
     contactName = res.match[0]
     unitAmount = res.match[1]
     description = res.match[2]
     console.log("about to ask the operator to invoice #{contactName} for #{unitAmount} of #{description}")
-    
-
   )
-
