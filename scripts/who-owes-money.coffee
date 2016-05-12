@@ -14,31 +14,32 @@ module.exports = {
 					console.log('Rejecting -- the query to xero failed')
 					reject()
 				else
-					console.log('Got our data...')
-					resolve(json.Response)
+          resolve(json.Response)
 			)
 		)
 		return promise;
 
 	createAnswer:  (response) ->
-		if(!response || !response.Contacts || !response.Contacts.Contact.length)
-			console.log(response)
-			console.log(response.Contacts.Contact)
-			console.log('No contacts in response')
-			return [];
+    console.log("Parsing who owes me money response: #{JSON.stringify(response)}")
+    if(!response || !response.Contacts || !response.Contacts.Contact.length)
+      console.log(response)
+      console.log(response.Contacts.Contact)
+      console.log('No contacts in response')
+      return [];
 
-		results = [];
-		_.forEach(_.take(response.Contacts.Contact, 5), (contact) ->
+    results = [];
+    _.forEach(_.take(response.Contacts.Contact, 5), (contact) ->
 				results.push({
 					name: contact.Name
 					outstanding: contact.Balances.AccountsReceivable.Outstanding
 					overdue: contact.Balances.AccountsReceivable.Overdue
 				})
-			)	
-		return results;
+    )
+    return results;
 
-	formatAnswer: (answer) ->
-		if(!answer.length)
-			return "Nobody does";
-		return 'you do, ' + answer[0].name;
-}		
+  formatAnswer: (answer) ->
+    if(!answer.length)
+      return "Nobody does";
+    else
+      return 'you do, ' + answer[0].name
+}

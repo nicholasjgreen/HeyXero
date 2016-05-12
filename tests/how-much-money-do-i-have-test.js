@@ -10,8 +10,8 @@ describe('HowMuchMoneyDoIHave operation', function () {
       var testResponse = JSON.parse(FS.readFileSync('./tests/testdata/HowMuchMoneyDoIHave.json'));
       var cells = howMuchMoneyDoIHave.parseResponse(testResponse);
       assert.equal(cells.length, 1);
-      assert.equal(cells[0].accountName, 'Checking Account');
-      assert.equal(cells[0].closingBalance, '-4946.33');
+      assert.equal(cells[0].accountName, 'Cheque Account');
+      assert.equal(cells[0].closingBalance, '28506.98');
     });
   });
 

@@ -2,24 +2,27 @@ Promise = require("bluebird");
 XeroConnection = require('./xero-connection');
 
 module.exports = {
+
   doRequest: () ->
-    promise = new Promise (resolve, reject) ->
+    new Promise((resolve, reject) ->
       # https://api.xero.com/api.xro/2.0/reports/BankSummary
-      XeroConnection().call 'GET', 'reports/BankSummary', null, (err, json) ->
+      XeroConnection().call 'GET', '/reports/BankSummary', null, (err, json) ->
         if(err)
-          reject
+          reject()
         else
           resolve(json)
-
-    return promise;
+    )
 
   parseResponse: (jsonResponse) ->
+
+    console.log("Received: #{JSON.stringify(jsonResponse)}")
+
     # Filter and map to array of array
-    cellRows = jsonResponse.Reports[0].Rows.filter((row) -> row.RowType == "Section" && row.Rows[0].RowType == "Row").map((row) -> row.Rows[0].Cells)
+    cellRows = jsonResponse.Response.Reports.Report.Rows.Row.filter((row) -> row.RowType == "Section" && row.Rows.Row[0].RowType == "Row").map((row) -> row.Rows.Row[0].Cells.Cell)
     if (cellRows.length > 0)
       cellRows.map( (cellRow) ->
         {
-          #First cell's Value
+          # First cell's Value
           accountName: cellRow[0].Value
           # Last cell
           closingBalance: cellRow.slice(-1)[0].Value
