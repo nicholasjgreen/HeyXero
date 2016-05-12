@@ -33,8 +33,8 @@ module.exports = {
         outstanding: contact.Balances.AccountsReceivable.Outstanding
         overdue: contact.Balances.AccountsReceivable.Overdue
       })
-    )
-    return results;
+    );
+    return results
 
   formatAnswer: (answer) ->
     results = []
@@ -42,7 +42,7 @@ module.exports = {
       results.push("Nobody does");
     else
       _.forEach(answer, (contact) ->
-        line = '' + contact.name + ': ' + numeral(Number(contact.outstanding)).format('$0,0.00')
+        line = '' + contact.name + ': *' + numeral(Number(contact.outstanding)).format('$0,0.00') + '*'
         if(contact.overdue > 0)
           line += ' (' + numeral(Number(contact.overdue)).format('$0,0.00') + ' overdue)'
         results.push(line)
