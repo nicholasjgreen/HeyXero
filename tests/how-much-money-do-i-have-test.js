@@ -8,7 +8,7 @@ describe('HowMuchMoneyDoIHave operation', function () {
   describe('parsing a json response', function () {
     it('should return accountName and closingBalance', function () {
       var testResponse = JSON.parse(FS.readFileSync('./tests/testdata/HowMuchMoneyDoIHave.json'));
-      var cells = howMuchMoneyDoIHave.parseResponse(testResponse);
+      var cells = howMuchMoneyDoIHave.createAnswer(testResponse);
       assert.equal(cells.length, 1);
       assert.equal(cells[0].accountName, 'Cheque Account');
       assert.equal(cells[0].closingBalance, '28506.98');

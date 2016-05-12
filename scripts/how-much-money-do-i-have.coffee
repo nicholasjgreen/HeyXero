@@ -13,7 +13,7 @@ module.exports = {
           resolve(json)
     )
 
-  parseResponse: (jsonResponse) ->
+  createAnswer: (jsonResponse) ->
 
     console.log("Received: #{JSON.stringify(jsonResponse)}")
 
