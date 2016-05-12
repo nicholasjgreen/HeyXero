@@ -31,8 +31,19 @@ module.exports = {
 
   howMuchMoneyDoIHave: () ->
     standardSingleQuery(HowMuchMoneyDoIHave)
-    
-  invoiceSomebody: () ->
-    standardSingleQuery(InvoiceSomebody)
+
+  invoiceSomebody: (contactName, description, unitAmount) ->
+    new Promise((resolve, reject) ->
+      # Start the request and get its promise
+      promise = InvoiceSomebody.doRequest(contactName, description, unitAmount);
+      promise.then(
+        (xeroResponse) ->
+          answer = InvoiceSomebody.createAnswer(xeroResponse);
+          formattedAnswer = InvoiceSomebody.formatAnswer(answer);
+          resolve(formattedAnswer);
+        () ->
+          reject();
+      )
+    )
 
 }

@@ -50,11 +50,17 @@ module.exports = (robot) ->
   )
 
   robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
-    contactName = res.match[0]
-    unitAmount = res.match[1]
-    description = res.match[2]
+    contactName = res.match[1]
+    unitAmount = res.match[2]
+    description = res.match[3]
     console.log("about to ask the operator to invoice #{contactName} for #{unitAmount} of #{description}")
-    
+    Operator.invoiceSomebody(contactName, description, unitAmount).then(
+      (result) ->
+        res.reply('Success!' + result)
+      (err) ->
+        console.log('Something has gone wrong :( ' + err)
+        res.reply("I'm not sure.")
+    )
 
   )
 
