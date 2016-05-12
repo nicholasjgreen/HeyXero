@@ -36,3 +36,16 @@ module.exports = (robot) ->
         res.reply("I'm not sure, how about you ask again later?")
     )
   )
+
+#  robot.respond(/what bills( are)?( coming up)?\??/i, (res) ->
+  robot.respond(/bills/i, (res) ->
+    console.log('about to ask operator, what bills are coming up?')
+    Operator.whatBillsAreComingUp().then(
+      (result) ->
+        res.reply(_.join(result, '\n'))
+      (r) ->
+        console.log('Something has gone wrong :( ' + r)
+        res.reply("I'm not sure, how about you ask again later?")
+    )
+  )
+

@@ -43,7 +43,7 @@ module.exports = {
      		line = '' + contact.name + ': ' + Number(contact.outstanding).toFixed(2)
      		if(contact.overdue > 0)
      			line += ' (' + Number(contact.overdue).toFixed(2) + ' overdue)'
-     			results.push(line)
+     		results.push(line)
       	)
   		return results;
   }

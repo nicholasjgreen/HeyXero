@@ -3,22 +3,30 @@ Promise = require("bluebird");
 # All of the operators
 WhoOwesMoney = require('./who-owes-money');
 HowMuchMoneyDoIHave = require('./how-much-money-do-i-have');
+WhatBillsAreComingUp = require('./what-bills-are-coming-up');
+
+standardSingleQuery = (operation) ->
+	new Promise((resolve, reject) ->
+      # Start the request and get its promise
+      promise = operation.doRequest();
+      promise.then(
+        (xeroResponse) ->
+          answer = operation.createAnswer(xeroResponse);
+          formattedAnswer = operation.formatAnswer(answer);
+          resolve(formattedAnswer);
+        () ->
+          reject();
+      )
+    )
+
 
 module.exports = {
 
   whoOwesMoney: () ->
-    new Promise((outerResolve, outerReject) ->
-      # Start the request and get its promise
-      promise = WhoOwesMoney.doRequest();
-      promise.then(
-        (xeroResponse) ->
-          answer = WhoOwesMoney.createAnswer(xeroResponse);
-          formattedAnswer = WhoOwesMoney.formatAnswer(answer);
-          outerResolve(formattedAnswer);
-        () ->
-          outerReject();
-      )
-    )
+  	standardSingleQuery(WhoOwesMoney)
+
+  whatBillsAreComingUp: () ->
+  	standardSingleQuery(WhatBillsAreComingUp)
 
   howMuchMoneyDoIHave: () ->
     new Promise((resolve, reject) ->
@@ -34,5 +42,4 @@ module.exports = {
           reject()
       )
     )
-
 }

@@ -49,7 +49,6 @@ describe('WhoOwesMoney', function () {
 				aContact('Malthilde', 10)
 			]);
 
-			assert.equal(result.length, 3);
 			assert.equal(result[0], 'Bob: 100.00 (10.00 overdue)');
 			assert.equal(result[1], 'Fred: 50.00 (5.00 overdue)');
 			assert.equal(result[2], 'Malthilde: 10.00');
