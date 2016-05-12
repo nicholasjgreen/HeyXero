@@ -18,7 +18,7 @@ module.exports = (robot) ->
     console.log('about to ask operator, who owes money?')
     Operator.whoOwesMoney().then(
       (result) ->
-        res.reply(_.join(result, '\n'))
+        res.reply('\n' + _.join(result, '\n'))
       (r) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask again later?")
@@ -47,5 +47,14 @@ module.exports = (robot) ->
         console.log('Something has gone wrong :( ' + r)
         res.reply("I'm not sure, how about you ask again later?")
     )
+  )
+
+  robot.respond(/invoice (.*) for (.*) of (.*)/i, (res) ->
+    contactName = res.match[0]
+    unitAmount = res.match[1]
+    description = res.match[2]
+    console.log("about to ask the operator to invoice #{contactName} for #{unitAmount} of #{description}")
+    
+
   )
 
