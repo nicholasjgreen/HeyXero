@@ -61,7 +61,7 @@ module.exports = (robot) ->
     console.log("about to ask the operator to invoice #{contactName} for #{unitAmount} of #{description}")
     Operator.invoiceSomebody(contactName, description, unitAmount).then(
       (result) ->
-        res.reply('Success!' + result)
+        res.reply(result)
       (err) ->
         console.log('Something has gone wrong :( ' + err)
         res.reply("I'm not sure.")
