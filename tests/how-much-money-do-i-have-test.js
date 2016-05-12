@@ -28,7 +28,7 @@ describe('HowMuchMoneyDoIHave operation', function () {
         }
       ];
       var formattedResponse = howMuchMoneyDoIHave.formatAnswer(answer);
-      assert.equal(formattedResponse, "\nBank Account: 200.00\nChecking Account: -4946.33\n");
+      assert.equal(formattedResponse, "\nBank Account: $200.00\nChecking Account: -$4,946.33\n");
     });
   });
 

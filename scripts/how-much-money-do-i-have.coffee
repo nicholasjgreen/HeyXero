@@ -1,5 +1,6 @@
 Promise = require("bluebird");
 XeroConnection = require('./xero-connection');
+numeral = require('numeral');
 
 module.exports = {
 
@@ -31,7 +32,7 @@ module.exports = {
 
   formatAnswer: (answer) ->
     formattedAnswer = "\n"
-    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{row.closingBalance}\n")
+    answer.forEach((row) -> formattedAnswer = formattedAnswer + "#{row.accountName}: #{numeral(row.closingBalance).format('$0,0.00')}\n")
     formattedAnswer
 
 }
